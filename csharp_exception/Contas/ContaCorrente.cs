@@ -10,6 +10,7 @@ namespace csharp_exception.Contas
     public class ContaCorrente
     {
         public static int TotalDeContasCriadas { get; private set; }
+        public int ContadorSaquesNaoPermitidos { get; private set; }
 
         public static float TaxaOperacao { get; private set; }
 
