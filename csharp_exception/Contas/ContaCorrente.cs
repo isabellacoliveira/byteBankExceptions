@@ -86,16 +86,18 @@ namespace csharp_exception.Contas
         {
             Numero_agencia = numero_agencia;
             Conta = numero_conta;
-            try 
+            if(numero_agencia <= 0)
             {
-                // vamos tentar 
-                TaxaOperacao = 30 / TotalDeContasCriadas; 
-            } // caso tenha excessão, mostramos a excessão 
-            // o que o progama deve fazer se encontrar a excessão
-            catch (DivideByZeroException)
-            {
-                Console.WriteLine("Ocorreu um erro, não é possível fazer uma divisão por 0.");
+                throw new ArgumentException("Número de agência menor ou igual a 0", nameof(numero_agencia));
             }
+            // try 
+            // {
+            //     TaxaOperacao = 30 / TotalDeContasCriadas; 
+            // } 
+            // catch (DivideByZeroException)
+            // {
+            //     Console.WriteLine("Ocorreu um erro, não é possível fazer uma divisão por 0.");
+            // }
             TotalDeContasCriadas++;
         }
 
